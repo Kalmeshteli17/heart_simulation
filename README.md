@@ -6,23 +6,7 @@ This project visualizes real-time ECG signals, simulates heart activity using PQ
 
 ## 📁 Project Structure
 
-heart/
-├── public/
-│ └── pqrst_intervals.json   # Phase intervals used by ECG graph
-├── src/
-│ ├── ECGVisualization.js    # Forward ECG (drives heart model)
-│ ├── ReverseECG.js     # Reverse ECG (feedback from heart)
-│ ├── App.js
-│ └── ...
-├── datasets/
-│ └── mit-bih-arrhythmia-database-1.0.0   # ECG/heart related datasets
-├── notebooks/
-│ └── ecg-analysis.ipynb      # Colab notebook for ECG analysis
-├── .gitignore
-├── package.json
-├── README.md
-
-
+![project structure](image-1.png)
 
 ---
 
@@ -42,8 +26,8 @@ heart/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/Kalmeshteli17/heart.git
-cd heart
+git clone https://github.com/Kalmeshteli17/heart_simulation.git
+cd heart_simulation
 
 2. Install dependencies
 npm install
