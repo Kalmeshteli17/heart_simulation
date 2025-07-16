@@ -1,0 +1,31 @@
+.settings-box {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #333;
+}
+
+.control-group {
+  margin: 10px 0;
+}
+
+.control-group label {
+  display: block;
+  margin: 8px 0;
+}
+
+.control-group input[type="range"] {
+  width: 150px;
+  vertical-align: middle;
+}
+
+button {
+  background: #4fc3f7;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #3da8d8;
+}

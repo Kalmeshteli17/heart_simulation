@@ -1,38 +1,196 @@
-.App {
-  text-align: center;
+.app-container { 
+  position: relative; 
+  width: 100vw; 
+  height: 100vh; 
+  overflow: hidden; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ui-box { 
+  position: absolute; 
+  padding: 15px; 
+  background: rgba(0,0,0,0.85); 
+  color: white; 
+  border-radius: 10px; 
+  z-index: 100; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.settings-box { 
+  top: 20px; 
+  left: 20px; 
+  width: 280px; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ecg-box { 
+  top: 20px; 
+  right: 20px; 
+  width: 380px; 
+  height: 260px; 
+}
+
+.ecg-container { 
+  width: 350px; 
+  height: 200px; 
+  background: black; 
+  border: 1px solid #333;
+}
+
+.heart-canvas { 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+}
+
+.loading { 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%,-50%); 
+  color: white; 
+  font-size: 20px; 
+  z-index: 1000; 
+}
+
+.phase-value { 
+  color: #4fc3f7; 
+  font-weight: bold; 
+}
+
+.bpm-value { 
+  color: #ff5252; 
+  font-weight: bold; 
+}
+
+.status.QRS { 
+  animation: pulse 0.5s infinite; 
+}
+
+@keyframes pulse { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.5; } 
+  100% { opacity: 1; } 
+}
+
+
+.app-container { 
+  position: relative; 
+  width: 100vw; 
+  height: 100vh; 
+  overflow: hidden; 
+  background-color: #000;
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.model-section {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.control-section {
+  width: 400px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: rgba(0,0,0,0.85);
+  padding: 15px;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.ecg-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ECG Container Styles */
+.ecg-visualization-container,
+.reverse-ecg-container {
+  width: 100%;
+  height: 200px;
+  background: black;
+  border: 1px solid #333;
+  border-radius: 5px;
+  overflow: hidden;
+} 
+
+/* Ensure proper spacing between controls and ECG */
+.controls-ui-container {
+  margin-bottom: 20px;
+}
+
+.loading { 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%,-50%); 
+  color: white; 
+  font-size: 20px; 
+  z-index: 1000; 
+}
+
+/* Phase and BPM value styling */
+.phase-value { 
+  color: #4fc3f7; 
+  font-weight: bold; 
+}
+
+.bpm-value { 
+  color: #ff5252; 
+  font-weight: bold; 
+}
+
+.status.QRS { 
+  animation: pulse 0.5s infinite; 
+}
+
+@keyframes pulse { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.5; } 
+  100% { opacity: 1; } 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .control-section {
+    width: 100%;
+    height: auto;
+    padding: 10px;
   }
+  
+  .model-section {
+    height: 50vh;
+  }
+  
+  .ecg-section {
+    margin-top: 10px;
+    gap: 10px;
+  }
+  
+  .ecg-visualization-container,
+  .reverse-ecg-container {
+    height: 150px;
+  }
+  
+  .controls-ui-container {
+    margin-bottom: 10px;
+  }
+}
+
+.reverse-section{
+  bottom:0;
+  right:0;
+  margin-right: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
 }
